@@ -1,12 +1,10 @@
-<Team Name (without word "team")>
-<Member Bubbles>
-<Member Buttercup>
-<Member Blossom>
-pd <pd#>
+HawDogs
+Jude Grodesky
+Jackie Li
+Maxwell Vale
+pd 2
 ---------------------
-<Project>
-
-
+***************The HawDog Casino***************
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 USAGE:
@@ -32,18 +30,21 @@ Flesh out each category whenever necessary, appropriate.
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<Wow, we so BOSS bc...>
+Ideas: What games/activities are included?
+We discussed this in length, regarding what games which be included. We've decided to mainly focus on card games, since we believe that the most efficient way to structure our casino is using a pre-existing deck of cards. This is because once we are able to draw, match, and recognize cards, we can replicate this for the games, and become exponentially faster.
+
+Visuals: How would we display each game?
+We needed a way to display each game, and a way to structure the display. For those games requiring a deck of cards, we would display a dealer's hand as well as a player's hand, as well as a a brief description of the game as its rules. For game requiring a display of random numbers, like Roulette and Keno, we would display a 2d array of numbers, which the user will be able to interact with.
+
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<
-blah blah pesky bug...
-maybe some of these will move into the Obs.Ovrcm section...
->
+Keeping or Leaving: What if the game becomes unnecessarily complicated?
+There is always a chance that a game becomes really complex and gives us a lot of issues, to the point where we must entertain scraping the idea. We believe that because having a variety of games, we can easily rid of any intricate headaches. Athough this is not really a problem, we may run into this in the future.
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<wow! oo! etc!...>
+This project would incude a broad range of superclasses and interfaces, seeing as there are a lot of different games which often share similar properties. We learned that we can create interfaces and a hierachy for the games to efficiently manage each game.
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -70,9 +71,20 @@ LESSONS LEARNED
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 
-yyyy-mm-dd
+2017-12-21
 --------------------------------------------------------------
-<Member> :: <Thing member did.>
-<Member> :: <Thing member did.>
-<Member> :: <Thing member did.>
+Maxwell :: Created Github repository. Added Jackie and Jude as contributors.
+==============================================================
+
+2018-1-1
+--------------------------------------------------------------
+Maxwell, Jackie, Jude :: Created the proposal of the project. This describes our casino what is may entail. Submitted proposal.
+==============================================================
+
+2018-1-4
+--------------------------------------------------------------
+Jackie :: Added the .gitignore file and the devlog.txt file to repo.
+Updated the devlog on the repo.
+Maxwell :: Fixed/Adjusted the proposal to address previous issues.
+Jude :: Created the UML diagram containing the superclasses and the classes of inheritance.
 ==============================================================
