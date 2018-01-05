@@ -31,20 +31,28 @@ Flesh out each category whenever necessary, appropriate.
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Ideas: What games/activities are included?
-We discussed this in length, regarding what games which be included. We've decided to mainly focus on card games, since we believe that the most efficient way to structure our casino is using a pre-existing deck of cards. This is because once we are able to draw, match, and recognize cards, we can replicate this for the games, and become exponentially faster.
+We discussed this in length, regarding what games which be included. We've decided to mainly focus on card games, 
+since we believe that the most efficient way to structure our casino is using a pre-existing deck of cards. This is because
+once we are able to draw, match, and recognize cards, we can replicate this for the games, and become exponentially faster.
 
 Visuals: How would we display each game?
-We needed a way to display each game, and a way to structure the display. For those games requiring a deck of cards, we would display a dealer's hand as well as a player's hand, as well as a a brief description of the game as its rules. For game requiring a display of random numbers, like Roulette and Keno, we would display a 2d array of numbers, which the user will be able to interact with.
-
+We needed a way to display each game, and a way to structure the display. For those games requiring a deck of cards, we 
+would display a dealer's hand as well as a player's hand, as well as a a brief description of the game as its rules. For 
+game requiring a display of random numbers, like Roulette and Keno, we would display a 2d array of numbers, which the user 
+will be able to interact with.
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Keeping or Leaving: What if the game becomes unnecessarily complicated?
-There is always a chance that a game becomes really complex and gives us a lot of issues, to the point where we must entertain scraping the idea. We believe that because having a variety of games, we can easily rid of any intricate headaches. Athough this is not really a problem, we may run into this in the future.
+There is always a chance that a game becomes really complex and gives us a lot of issues, to the point where we must 
+entertain scraping the idea. We believe that because having a variety of games, we can easily rid of any intricate 
+headaches. Athough this is not really a problem, we may run into this in the future.
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-This project would incude a broad range of superclasses and interfaces, seeing as there are a lot of different games which often share similar properties. We learned that we can create interfaces and a hierachy for the games to efficiently manage each game.
+This project would incude a broad range of superclasses and interfaces, seeing as there are a lot of different games which 
+often share similar properties. We learned that we can create interfaces and a hierachy for the games to efficiently manage 
+each game.
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
