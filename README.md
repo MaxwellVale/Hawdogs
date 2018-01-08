@@ -1,2 +1,4 @@
-# HAWDOGS
-APCS Project 2017!
+# TEAM HAWDOGS
+Maxwell Vale, Jude Grodesky, Jackie Li
+<Description of Projection>
+<Instructions>
