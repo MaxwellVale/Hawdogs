@@ -8,6 +8,8 @@ public class CasinoDriver {
 
   private Player _p1;
 
+  private int area;
+
   // ****************************
 
   // ***** Default Constructor *****
@@ -55,12 +57,49 @@ public class CasinoDriver {
 
   }
 
+  public void areaSelect() {
+
+    String s;
+    s = "\nHello, " + _p1.getName() + "!\n";
+    s += "\nHere in The HawDog Casino, there are several ways you can go:\n";
+    s += "\t1: Games\n";
+    s += "\t2: Ye Olde Shoppe\n";
+    s += "\t3: Leave (if you've had enough for today)\n";
+    s += "Where would you like to go? ";
+    System.out.println(s);
+
+    area = cs1.Keyboard.readInt();
+
+    if (area == 1) {
+      gameSelect();
+    }
+    else if (area == 2) {
+      shop();
+    }
+    else {
+      leave();
+    }
+  }
+
+  public void gameSelect() {
+    System.out.println("You have chosen to go to the game area.");
+  }
+
+  public void shop() {
+    System.out.println("You have chosen to go to Ye Olde Shoppe.");
+  }
+
+  public void leave() {
+    System.out.println("You have chosen to leave (but why tho?)");
+  }
+
   //********************
 
   public static void main (String args[]) {
 
     CasinoDriver game = new CasinoDriver();
 
+    game.areaSelect();
 
   }// end main method
 
