@@ -96,3 +96,11 @@ Updated the devlog on the repo.
 Maxwell :: Fixed/Adjusted the proposal to address previous issues.
 Jude :: Created the UML diagram containing the superclasses and the classes of inheritance.
 ==============================================================
+
+2018-1-8
+--------------------------------------------------------------
+Jackie :: Updated the README.md with the project description and instructions.
+Jude :: Uploaded and modified the UML diagrams.
+Max :: Started the driver file as well as file Player.
+Everyone :: Worked on creating a runnable and succinct driver class and player class.
+==============================================================
