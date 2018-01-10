@@ -1,7 +1,7 @@
 # TEAM HAWDOGS
 Maxwell Vale, Jude Grodesky, Jackie Li
 
-#Description#
+#Description
 
 Our project is an interactive casino, one where the user can choose from a wide variety of casino games. A person will be 
 able to spend money to play various casino games, such as Blackjack, Poker, Roulette, Keno, Craps, and Baccarat. Many of the 
@@ -14,7 +14,7 @@ their current amount of money. Of course, the money isn’t just going to go to wa
 in The HawDog Casino…. No of course not. Instead, once the player is satisfied with their winnings, they may visit The 
 HawDog Shoppe in which they may cash in their chips and cash in exchange for exclusive digital trinkets and prizes. 
 
-#Instructions#
+#Instructions
 
 1. In order to run and play in the casino, one must first launch the driver class Casino. By executing the file, one will be 
 able to start up the casino.
