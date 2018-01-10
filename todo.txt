@@ -1,0 +1,28 @@
+Hawdogs -- Maxwell Vale, Jackie Li, Jude Grodesky
+APCS1 pd02
+APCS Final Project
+
+To Do List
+
+Versions (In order of priority/necessity)
+Version 1
+	~~~~~ Create first compilable version of the GameDriver class ~~~~~ Check
+	At first able to pick and play game of choosing
+	Create and test the playing ability of the games based on the player's choice
+	Codify Deck and Card (and perhaps Dice) functionality. Test on a mock-up game for completeness/errors. 
+	Create all Game classes with appropriate class hierarchies, instance vars, and methods
+	Make the rules of each game more realistic and specific
+
+Version 2
+	Some sort of visual for the game being played rather than all text
+	Create Ye Olde Shoppe and items in it
+	Include Ye Olde Shoppe in places to go within Driver class
+	Winnings not affected by House Advantage (or House Edge, HE)
+
+Version 3 (if time)
+	All needed aspects of The HawDogs Casino are completely finished.
+	Include other buyable items that may affect gameplay
+	Drinks/Food
+	Allow <Player> to use some sort of power-up
+	Temporary luck boost
+	Account for HE in the winnings for each game
