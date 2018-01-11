@@ -6,93 +6,125 @@ import cs1.Keyboard;
 
 public class Keno {
 
-  // ***** Instance Vars *****
-  private int playCost; // money cost for each play
-  private ArrayList<Integer> nums; // list that holds numbers to guess from
-  private ArrayList<Integer> wins; // list that holds the winning numbers
-  private int guess; // Player's guess
-  // *************************
+    // ***** Instance Vars *****
+    private int playCost; // money cost for each play
+    private ArrayList<Integer> nums; // list that holds numbers to guess from
+    private ArrayList<Integer> winNums; // list that holds the winning numbers
+    private ArrayList<Integer>  guesses; // Player's guess
+    private ArrayList<Integer> matches; // Winning guesses
+    private int winCount = 0;
+    // *************************
+    
 
-  // ***** Default Constructor *****
-  public Keno() {
+    // ***** Default Constructor *****
+    public Keno() {
 
-    // Create the array of answers to guess from
-    nums = new ArrayList<Integer>();
-    for (int i = 1; i <= 10; i++) {
-      nums.add(i);
+	playCost = 10; // dollars
+
+	guesses = new ArrayList<Integer>();
+
+	// Create the array of answers to guess from
+	nums = new ArrayList<Integer>();
+	for (int i = 1; i <= 80; i++) {
+	    nums.add(i);
+	}
+
+	// Generate Winning numbers for this play
+	winNums = new ArrayList<Integer>();
+	while (winNums.size() < 20) {
+	    int winNum = (int) (Math.random() * 80 + 1);
+	    if (winNums.indexOf(winNum) == -1) {
+		winNums.add(winNum);
+	    }
+	}
+
+	play();
+
+    }
+    // *******************************
+    
+
+    // ***** Methods *****
+    public String about() {
+
+	String s;
+	s = "\nKeno is a Random Number Casino game playable at The HawDog Casino.\n";
+	s += "At the beginning of every game, 20 random numbers from 1 - 80 (inclusive) are chosen as the winning numbers.\n";
+	s += "The Player is prompted to choose 20 numbers from 1 - 80, inclusive.\n";
+	s += "The Player's guesses are then compared to the random winning numbers and paid for each number guessed correctly.\n";
+
+	return s;
     }
 
-    // Generate Winning numbers for this play
-    wins = new ArrayList<Integer>();
-    while (wins.size() < 3) {
-      int winNum = (int) (Math.random() * 10 + 1);
-      if (wins.indexOf(winNum) == -1) {
-        wins.add(winNum);
-      }
+    public void guessNum() {
+
+	int guess = cs1.Keyboard.readInt();
+
+	if (guess < 1 || guess > 80 || guesses.indexOf(guess) != -1) {
+	    System.out.println("Please enter a valid guess.");
+	    guessNum();
+	}
+	else {
+	    guesses.add(guess);
+	}
     }
 
-    play();
-
-  }
-  // *******************************
-
-  // ***** Methods *****
-  public String about() {
-
-    String s;
-    s = "\nKeno is a Random Number Casino game playable at The HawDog Casino.\n";
-    s += "At the beginning of every game, 20 random numbers from 1 - 80 (inclusive) are chosen as the winning numbers.\n";
-    s += "The Player is prompted to choose 20 numbers from 1 - 80, inclusive.\n";
-    s += "The Player's guesses are then compared to the random winning numbers and paid for each number guessed correctly.\n";
-
-    return s;
-  }
-
-  public void guessNum() {
-
-    guess = cs1.Keyboard.readInt();
-
-    if (guess < 1 || guess > 10) {
-      System.out.println("Please enter a valid guess.");
-      guessNum();
-    }
-  }
-
-  public boolean win() {
-    return (wins.indexOf(guess) != -1);
-  }
-
-  public void play() {
-
-    String s;
-    s = "Would you like to see the rules of the game? \n";
-    s += "\t1: Yes\n";
-    s += "\t2: No\n";
-    System.out.println(s);
-
-    int rules = cs1.Keyboard.readInt();
-
-    if (rules == 1) {
-      System.out.println(about());
+    public int getCost() {
+	return playCost;
     }
 
-    s = "Ok, now please make your guess from 1 - 10 inclusive: ";
-    System.out.println(s);
+    public boolean win() {
 
-    guessNum();
-
-    if (win()) {
-      System.out.println("Congratulations, you have guessed a winning number!");
+	matches = new ArrayList<Integer>();
+	
+	boolean win = false;
+	for (int i = 0; i < guesses.size(); i++) {
+	    if (winNums.indexOf(guesses.get(i)) != -1) {
+		winCount++;
+		win = true;
+		matches.add(guesses.get(i));
+	    }
+	}
+	return win;
     }
-    else {
-      System.out.println("Sorry, that was not one of the winning numbers...");
+
+    public void play() {
+
+	String s;
+	s = "Would you like to see the rules of the game? \n";
+	s += "\t1: Yes\n";
+	s += "\t2: No\n";
+	System.out.println(s);
+
+	int rules = cs1.Keyboard.readInt();
+
+	if (rules == 1) {
+	    System.out.println(about());
+	}
+
+	s = "Ok, now please make 15 unique guesses from 1 - 80 inclusive: ";
+	System.out.println(s);
+
+        while (guesses.size() < 15) {
+
+	    guessNum();
+	    
+	}
+
+	if (win()) {
+	    System.out.println("Congratulations, you have guessed a winning number!");
+	}
+	else {
+	    System.out.println("Sorry, that was not one of the winning numbers...");
+	}
+
+	System.out.println("Winning Numbers: " + winNums);
+	System.out.println("Number of matches: " + winCount);
+	System.out.println("Your winning guesses: " + matches);
     }
 
-    System.out.println("Winning Numbers: " + wins);
-  }
 
-
-  // *******************
+    // *******************
 
 
 }// end class Keno

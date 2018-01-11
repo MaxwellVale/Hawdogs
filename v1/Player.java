@@ -45,4 +45,10 @@ public class Player {
 	return oldAge;
     }
 
+    public int pay (int depAmount) {
+	int oldBalance = balance;
+	balance -= depAmount;
+	return oldBalance;
+    }
+
 }//end class Player
