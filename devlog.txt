@@ -104,3 +104,17 @@ Jude :: Uploaded and modified the UML diagrams.
 Max :: Started the driver file as well as file Player.
 Everyone :: Worked on creating a runnable and succinct driver class and player class.
 ==============================================================
+
+2018-1-9
+--------------------------------------------------------------
+Jackie :: Created todo.txt for the group detailing the priorities of the group and cleaned up the README.md.
+Jude :: Uploaded hand drawn version of the Driver Flowchart.
+Maxwell :: Created and uploaded online version of the Driver Flowchart.
+==============================================================
+
+2018-1-10
+--------------------------------------------------------------
+Jackie, Jude :: Organized the files in the group project repository.
+Maxwell :: Created Flowchart detailing the general functionality of a game in the Casino. Also created an initial test version of the Keno game and implemented into CasinoDriver class.
+==============================================================
+
