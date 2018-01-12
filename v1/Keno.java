@@ -12,6 +12,7 @@ public class Keno {
     private ArrayList<Integer> winNums; // list that holds the winning numbers
     private ArrayList<Integer>  guesses; // Player's guess
     private ArrayList<Integer> matches; // Winning guesses
+    private double mult;
     private int winCount = 0;
     // *************************
     
@@ -50,7 +51,7 @@ public class Keno {
 	String s;
 	s = "\nKeno is a Random Number Casino game playable at The HawDog Casino.\n";
 	s += "At the beginning of every game, 20 random numbers from 1 - 80 (inclusive) are chosen as the winning numbers.\n";
-	s += "The Player is prompted to choose 20 numbers from 1 - 80, inclusive.\n";
+	s += "The Player is prompted to choose 15 numbers from 1 - 80, inclusive.\n";
 	s += "The Player's guesses are then compared to the random winning numbers and paid for each number guessed correctly.\n";
 
 	return s;
@@ -73,6 +74,10 @@ public class Keno {
 	return playCost;
     }
 
+    public double getMult() {
+	return mult;
+    }
+
     public boolean win() {
 
 	matches = new ArrayList<Integer>();
@@ -81,6 +86,7 @@ public class Keno {
 	for (int i = 0; i < guesses.size(); i++) {
 	    if (winNums.indexOf(guesses.get(i)) != -1) {
 		winCount++;
+		mult += 0.3;
 		win = true;
 		matches.add(guesses.get(i));
 	    }
@@ -112,10 +118,10 @@ public class Keno {
 	}
 
 	if (win()) {
-	    System.out.println("Congratulations, you have guessed a winning number!");
+	    System.out.println("Congratulations, you have guessed at least one winning number!");
 	}
 	else {
-	    System.out.println("Sorry, that was not one of the winning numbers...");
+	    System.out.println("Sorry, those was not the winning numbers...");
 	}
 
 	System.out.println("Winning Numbers: " + winNums);

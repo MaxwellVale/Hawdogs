@@ -125,6 +125,9 @@ public class CasinoDriver {
 	    gameSelect();
 	}
 	else {
+	    double earning = (newGame.getMult() * newGame.getCost());
+	    System.out.println("You have won " + (earning - newGame.getCost()));
+	    _p1.win(earning);
 	    _p1.pay(newGame.getCost());
 	    System.out.println("Current Balance is now " + _p1.getBalance());
 	}

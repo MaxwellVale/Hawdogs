@@ -3,7 +3,7 @@ public class Player {
     // Instance Variables
     private String name;
     private int age;
-    private int balance;
+    private double balance;
     // ******************
 
     //Default Constructor
@@ -29,7 +29,7 @@ public class Player {
 	return age;
     }
 
-    public int getBalance() {
+    public double getBalance() {
 	return balance;
     }
 
@@ -45,9 +45,15 @@ public class Player {
 	return oldAge;
     }
 
-    public int pay (int depAmount) {
-	int oldBalance = balance;
+    public double pay (int depAmount) {
+	double oldBalance = balance;
 	balance -= depAmount;
+	return oldBalance;
+    }
+
+    public double win (double winAmount) {
+	double oldBalance = balance;
+	balance += winAmount;
 	return oldBalance;
     }
 
