@@ -15,3 +15,53 @@ Part 1: Multiple Choice
 8. A
 9. C
 10.D
+
+Part 2: Short Response
+11a.
+public int nextTankToFill (int threshold) {
+       int lowest = filler.getCurrentIndex();
+       for (FuelTank i : tanks) {
+       	   if (i.getFuelLevel() < threshold) {
+	      if (i.getFuelLevel < tanks.get(lowest)) {
+	      	 lowest = i;
+	      }
+	   }
+       }
+       return lowest;
+}
+11b.
+public void moveToLocation (int locIndex) {
+       int loc = filler.getCurrentIndex();
+       int dist = 0;
+       if (loc < locIndex) {
+       	  dist = locIndex - loc;
+       }
+       else {
+          dist = loc - locInddex;
+       }
+
+       if ((dist > locIndex) && isFacingRight()) {
+       	  filler.changeDirection();
+       }
+       else if (dist < locIndex && !isFacingRight()) {
+	  filler.changeDirection();
+       }
+       filler.moveForward(moves);
+12a.
+private void fillBlock(String str){
+	int i = 0;
+	for (int r = 0; r < numRows; r++) {
+	    for (int c = 0; c < numColumns; c++) {
+	    	letterblock[r][c] = str.substring(i, i+1);
+		if (str.length() < r*c) {
+		   letterblock[r][c] = "A";
+		}
+		else if (str.length() > r*c) {
+		   break;
+		}
+		i++;
+	    }
+	}
+}
+
+12b.
