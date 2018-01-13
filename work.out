@@ -65,3 +65,20 @@ private void fillBlock(String str){
 }
 
 12b.
+private String encryptMessage(String message) {
+	String word = "";
+	int total = numColumns * numRows;
+      	int call = message.length() / total;
+      	if(message.equals("")) {
+	   return word;
+	}
+	
+	for (int i = 0; i < call; i++) {
+	   String[][] l = new RouteCipher();
+	   1.fillblock();
+	   for (int c=0; c< 1.numColumns; c++) {
+		word += 1.encryptBlock();
+	   }
+	}
+       return word;
+}
