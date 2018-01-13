@@ -7,7 +7,6 @@ import cs1.Keyboard;
 public class Keno extends Game{
 
     // ***** Instance Vars *****
-    private int cost; // money cost for each play
     private ArrayList<Integer> nums; // list that holds numbers to guess from
     private ArrayList<Integer> winNums; // list that holds the winning numbers
     private ArrayList<Integer>  guesses; // Player's guess
@@ -20,7 +19,7 @@ public class Keno extends Game{
     // ***** Default Constructor *****
     public Keno() {
 
-	cost = 10; // dollars
+	cost = 10;
 
 	guesses = new ArrayList<Integer>();
 
@@ -70,9 +69,6 @@ public class Keno extends Game{
 	}
     }
 
-    public double getCost() {
-	return cost;
-    }
 
     public double getMult() {
 	return mult;
