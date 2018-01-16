@@ -18,6 +18,8 @@ HawDog Shoppe in which they may cash in their chips and cash in exchange for exc
 
 1. In order to run and play in the casino, one must first launch the driver class Casino. By executing the file, one will be 
 able to start up the casino.
+- Please launch the file CasinoDriver.java -- You can do this by typing in the terminal javac CasinoDriver.java
+- You then compile the file by typing java CasinoDriver.java and enter the casino.
 
 2. Upon launching the casino, the player will be prompted to either login to a pre-existing account or create a new account.
 - If the player logs into an old account, they will be able to continue from their previous progress. Otherwise, the player can 

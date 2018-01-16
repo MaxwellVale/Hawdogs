@@ -118,3 +118,19 @@ Jackie, Jude :: Organized the files in the group project repository.
 Maxwell :: Created Flowchart detailing the general functionality of a game in the Casino. Also created an initial test version of the Keno game and implemented into CasinoDriver class.
 ==============================================================
 
+2018-1-11
+--------------------------------------------------------------
+Jackie :: Added currency costs and winning multiplier for the game Keno.
+Maxwell :: Added a realistic aspect to Keno, adding a way to count, match, and return your winning numbers.
+==============================================================
+
+2018-1-13
+--------------------------------------------------------------
+Jude :: Added the Game superclass(abstract).
+==============================================================
+
+2018-1-15
+--------------------------------------------------------------
+Jackie :: Built the Card and Deck classes which is needed for the card games.
+Jude :: Built and created a working version of Blackjack.
+==============================================================

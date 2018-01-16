@@ -25,10 +25,5 @@ public class Deck {
     }
 
     public static void main(String[] args) {
-	Deck deck = new Deck();
-	
-	System.out.println("Drawing one card");
-	Card d = deck.draw();
-	System.out.println(d.toString() );
     }
 }

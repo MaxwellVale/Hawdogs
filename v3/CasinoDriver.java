@@ -90,6 +90,7 @@ public class CasinoDriver {
 	String s;
 	s = "\nPlease choose a game to play\n";
 	s += "\t1: Keno\n";
+	s += "\t2: Blackjack\n";
 	System.out.println(s);
 
 	_game = cs1.Keyboard.readInt();
@@ -97,7 +98,9 @@ public class CasinoDriver {
 	if (_game == 1) {
 	    playKeno();
 	}
-
+	else if (_game == 2) {
+	    playBlackjack();
+	}
 	areaSelect();
 
     }
@@ -122,6 +125,11 @@ public class CasinoDriver {
 	    _p1.deposit(newGame.getCost() * -1);
 	    System.out.println("Current Balance is now " + _p1.getBalance());
 	}
+
+    }
+
+    public void playBlackjack() {
+	System.out.println("You are now playing Blackjack.");
 
     }
 
