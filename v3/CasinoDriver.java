@@ -130,7 +130,20 @@ public class CasinoDriver {
 
     public void playBlackjack() {
 	System.out.println("You are now playing Blackjack.");
+	Blackjack newGame = new Blackjack();
 
+	if (newGame.getCost() > _p1.getBalance()) {
+	    System.out.println("Sorry, you don't have enough money to play this game....");
+	    gameSelect();
+	}
+	else {
+	    double earning = (newGame.getMult() *newGame.getMult());
+	    System.out.println("You have won " + (earning - newGame.getCost()));
+	    _p1.deposit(earning);
+	    _p1.deposit(newGame.getCost() * -1);
+	    System.out.println("Current Balance is now " + _p1.getBalance());
+	}
+	
     }
 
     //********************
