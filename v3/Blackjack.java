@@ -47,7 +47,7 @@ public class Blackjack extends Game {
 	s += "You are dealt a hand of two cards at the beginning, and a dealer is also dealt two cards. ";
   s += "\nAll of the number cards are valued at their number.";
   s += "\nAll face cards are worth 10 and the ace is worth 11.";
-	s += "If you or the dealer automatically gets a total value of 21 (adding together card values), you have blackjack, and win quick money. ";
+	s += "\nIf you or the dealer automatically gets a total value of 21 (adding together card values), you have blackjack, and win quick money. ";
 	s += "Otherwise, you are given the choice to hit, stand, or double. ";
 	s += "\nBy hitting, you draw a card from the deck, and can keep going until you go over 21";
 	s += "\nBy standing, you trust your luck, and compare your value with the dealer's";
