@@ -137,7 +137,11 @@ public class CasinoDriver {
 	    gameSelect();
 	}
 	else {
+<<<<<<< HEAD
 	    double earning = (newGame.getMult() * newGame.getCost());
+=======
+	    double earning = (newGame.getMult() * newGame.getMult());
+>>>>>>> 9aa9ea4fa243067d9d408f5258fb48259db9983a
 	    System.out.println("You have won " + (earning - newGame.getCost()));
 	    _p1.deposit(earning);
 	    _p1.deposit(newGame.getCost() * -1);
