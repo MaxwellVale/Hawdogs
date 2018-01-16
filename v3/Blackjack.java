@@ -81,13 +81,7 @@ public class Blackjack extends Game {
 	    mult = 2.5;
 	    win = true;	    
 	}
-	if (value(_player) == 21){
-	    System.out.println("You had a blackjack! \n");
-	    mult = 2.5;
-	    win = true;
-	    win();
 
-	}
 	if (value(_dealer) == 21){
 	    System.out.println("You lost. The dealer had a blackjack! \n");
 	    win = false;
