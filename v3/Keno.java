@@ -113,7 +113,7 @@ public class Keno extends Game implements RNG{
 	    System.out.println("Congratulations, you have guessed at least one winning number!");
 	}
 	else {
-	    System.out.println("Sorry, those was not the winning numbers...");
+	    System.out.println("Sorry, those were not the winning numbers...");
 	}
 
 	System.out.println("Winning Numbers: " + winNums);
