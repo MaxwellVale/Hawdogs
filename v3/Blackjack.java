@@ -76,7 +76,7 @@ public class Blackjack extends Game {
 
 	System.out.println("The dealer has a: " + _dealer.get(0) + "\n");
 	
-	if (value(_player) == 21){
+	if (value(_player) == 21 && (_player.size() == 2)){
 	    System.out.println("You had a blackjack! \n");
 	    mult = 2.5;
 	    win = true;	    
@@ -137,28 +137,25 @@ public class Blackjack extends Game {
     }
 
     public boolean win() {
-	if (value(_dealer) < 17) {
-	    while (value(_dealer) <17) {
-		_dealer.add(_deck.draw());
-	    }
-	    win();
+	if (value(_dealer) == value(_player)) {
+	    win = true;
 	}
-	else if (value(_dealer) > 21) {
+	if (value(_dealer) > 21) {
 	    System.out.println("Dealer had : " + _dealer + "\n");
 	    System.out.println("Dealer busted. Congrats!");
 	    win = true;
 	}
+	else if (value(_dealer) < 17) {
+	    while (value(_dealer) <17) {
+		_dealer.add(_deck.draw());
+	    }
+	}
 
-	
 	else if (value(_player) > value(_dealer)) {
-
-
-	if (value(_player) > value(_dealer)) {
 
 	    System.out.println("Dealer had : " + _dealer + "\n");
 	    System.out.println("Congrats! You beat the dealer!");
 	    win = true;
-	}
 	}
 	else {
 	    System.out.println("Dealer had : " + _dealer + "\n");
