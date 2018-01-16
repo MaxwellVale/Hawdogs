@@ -21,7 +21,6 @@ public class Blackjack extends Game {
 
 	_dealer.add(_deck.draw());
 	_dealer.add(_deck.draw());
-<<<<<<< HEAD
 
 	String i;
 	
@@ -36,9 +35,6 @@ public class Blackjack extends Game {
 	   System.out.println(about());
 	}
 
-=======
-	System.out.println("The dealer has a: " + _dealer.get(0) + "\n");
->>>>>>> 4d77c012f1f6cb24f2d3152b14cdabd2418caa23
 	play();
 
     }
@@ -69,13 +65,13 @@ public class Blackjack extends Game {
 	    else if ((hand.get(i)).getRank() == 12){
 		sum += 10; }
 	    else{
-		sum += (hand.get(i)).getRank();}
+		sum += (hand.get(i)).getRank(); }
 	}
 	return sum;
     }
 
     public void play() {
-<<<<<<< HEAD
+
 	System.out.println("Your hand is: " + _player + "\n");
 
 	System.out.println("The dealer has a: " + _dealer.get(0) + "\n");
@@ -84,26 +80,13 @@ public class Blackjack extends Game {
 	    System.out.println("You had a blackjack! \n");
 	    mult = 2.5;
 	    win = true;	    
-=======
-	String i;
-
-	i = "Would you like to see the rules of the game? \n";
-	i += "\t1: Yes\n";
-	i += "\t2: No\n";
-	System.out.println(i);
-
-	int rules = cs1.Keyboard.readInt();
-
-	if (rules == 1) {
-	   System.out.println(about());
 	}
-
 	if (value(_player) == 21){
 	    System.out.println("You had a blackjack! \n");
 	    mult = 2.5;
 	    win = true;
 	    win();
->>>>>>> 4d77c012f1f6cb24f2d3152b14cdabd2418caa23
+
 	}
 	if (value(_dealer) == 21){
 	    System.out.println("You lost. The dealer had a blackjack! \n");
@@ -135,7 +118,7 @@ public class Blackjack extends Game {
 	    System.out.println("You've chosen an invalid choice. Please select again");
 	    play();
 	}
-	}
+    }
 
     public void reveal() {
 	if (choice == 3) {
@@ -171,16 +154,17 @@ public class Blackjack extends Game {
 	    System.out.println("Dealer busted. Congrats!");
 	    win = true;
 	}
-<<<<<<< HEAD
+
 	
 	else if (value(_player) > value(_dealer)) {
-=======
+
 
 	if (value(_player) > value(_dealer)) {
->>>>>>> 4d77c012f1f6cb24f2d3152b14cdabd2418caa23
+
 	    System.out.println("Dealer had : " + _dealer + "\n");
 	    System.out.println("Congrats! You beat the dealer!");
 	    win = true;
+	}
 	}
 	else {
 	    System.out.println("Dealer had : " + _dealer + "\n");
@@ -189,5 +173,4 @@ public class Blackjack extends Game {
 	}
 	return win;
     }
-
 }
