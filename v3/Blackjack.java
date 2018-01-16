@@ -77,13 +77,10 @@ public class Blackjack extends Game {
 	System.out.println("Your hand is: " + _player + "\n");
 
 	System.out.println("The dealer has a: " + _dealer.get(0) + "\n");
-<<<<<<< HEAD
-	
+
 	if (value(_player) == 21 && (_player.size() == 2)){
-=======
 
 	if (value(_player) == 21){
->>>>>>> 9aa9ea4fa243067d9d408f5258fb48259db9983a
 	    System.out.println("You had a blackjack! \n");
 	    mult = 2.5;
 	    win = true;
@@ -120,7 +117,7 @@ public class Blackjack extends Game {
 	    play();
 	}
     }
-
+	}
     public void reveal() {
 	if (choice == 3) {
 	    if (value(_player) > 21) {
@@ -158,10 +155,6 @@ public class Blackjack extends Game {
 	    }
 	}
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 9aa9ea4fa243067d9d408f5258fb48259db9983a
 	else if (value(_player) > value(_dealer)) {
 
 	    System.out.println("Dealer had : " + _dealer + "\n");
