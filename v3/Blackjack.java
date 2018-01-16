@@ -23,7 +23,7 @@ public class Blackjack extends Game {
 	_dealer.add(_deck.draw());
 
 	String i;
-	
+
 	i = "Would you like to see the rules of the game? \n";
 	i += "\t1: Yes\n";
 	i += "\t2: No\n";
@@ -45,7 +45,9 @@ public class Blackjack extends Game {
 	String s;
 	s = "\nBlackjack is a card game where your objective is to reach a value of 21.\n";
 	s += "You are dealt a hand of two cards at the beginning, and a dealer is also dealt two cards. ";
-	s += "If you or the dealer automatically gets a value of 21, you have blackjack, and win quick money. ";
+  s += "\nAll of the number cards are valued at their number.";
+  s += "\nAll face cards are worth 10 and the ace is worth 11.";
+	s += "If you or the dealer automatically gets a total value of 21 (adding together card values), you have blackjack, and win quick money. ";
 	s += "Otherwise, you are given the choice to hit, stand, or double. ";
 	s += "\nBy hitting, you draw a card from the deck, and can keep going until you go over 21";
 	s += "\nBy standing, you trust your luck, and compare your value with the dealer's";
@@ -75,11 +77,11 @@ public class Blackjack extends Game {
 	System.out.println("Your hand is: " + _player + "\n");
 
 	System.out.println("The dealer has a: " + _dealer.get(0) + "\n");
-	
+
 	if (value(_player) == 21){
 	    System.out.println("You had a blackjack! \n");
 	    mult = 2.5;
-	    win = true;	    
+	    win = true;
 	}
 	if (value(_player) == 21){
 	    System.out.println("You had a blackjack! \n");
@@ -155,7 +157,7 @@ public class Blackjack extends Game {
 	    win = true;
 	}
 
-	
+
 	else if (value(_player) > value(_dealer)) {
 
 
