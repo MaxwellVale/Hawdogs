@@ -71,8 +71,7 @@ public class CasinoDriver {
 	String s;
 	s = "\nWhere would you like to go? \n";
 	s += "\t1: Games\n";
-	s += "\t2: Ye Olde Shoppe\n";
-	s += "\t3: Leave (if you've had enough for today)\n";
+	s += "\t2: Leave (if you've had enough for today)\n";
 	s += "\nWhere would you like to go? ";
 	System.out.println(s);
 
@@ -80,9 +79,6 @@ public class CasinoDriver {
 
 	if (_area == 1) {
 	    gameSelect();
-	}
-	else if (_area == 2) {
-	    shop();
 	}
 	else {
 	    leave();
@@ -104,11 +100,6 @@ public class CasinoDriver {
 
 	areaSelect();
 
-    }
-
-    public void shop() {
-	System.out.println("You have chosen to go to Ye Olde Shoppe.");
-	areaSelect();
     }
 
     public void leave() {
