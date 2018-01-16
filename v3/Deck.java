@@ -5,7 +5,7 @@ public class Deck {
 
     private ArrayList<Card> cards;
 
-    Deck() {
+    public Deck() {
 	cards = new ArrayList<Card>();
 	for (int suit=0; suit<=3; suit++) {
 	    for (int rank=0; rank<=12; rank++) {
@@ -16,7 +16,7 @@ public class Deck {
 
     public Card draw() {
 	Random generator =  new Random();
-	int index = generator.nextInt(cards.size());
+	int index = (int)Math.random() * cards.size();
 	return cards.remove(index);
     }
 

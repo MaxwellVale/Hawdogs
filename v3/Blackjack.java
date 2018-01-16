@@ -5,8 +5,8 @@ import cs1.Keyboard;
 
 public class Blackjack extends Game {
 
-    private ArrayList<Card> _dealer;
-    private ArrayList<Card> _player;
+    private ArrayList<Card> _dealer = new ArrayList<Card>();
+    private ArrayList<Card> _player = new ArrayList<Card>();
     private Deck _deck;
     private int choice;
     private boolean win;
@@ -82,7 +82,7 @@ public class Blackjack extends Game {
 	    System.out.println("You lost. The dealer had a blackjack! \n");
 	}
 	String s;
-	s = "Make your decision";
+	s = "Make your decision\n";
 	s += "\t1: Stand\n";
 	s += "\t2: Hit\n";
 	s += "\t3: Double\n";
@@ -139,15 +139,18 @@ public class Blackjack extends Game {
 	    win();
 	}
 	if (value(_dealer) > 21) {
+	    System.out.println("Dealer had : " + _dealer + "\n");
 	    System.out.println("Dealer busted. Congrats!");
 	    win = true;
 	}
 	
 	if (value(_player) > value(_dealer)) {
+	    System.out.println("Dealer had : " + _dealer + "\n");
 	    System.out.println("Congrats! You beat the dealer!");
 	    win = true;
 	}
 	else {
+	    System.out.println("Dealer had : " + _dealer + "\n");
 	    System.out.println("Dealer has beaten you. Sorry");
 	    win = false;
 	}
