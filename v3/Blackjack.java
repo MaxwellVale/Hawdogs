@@ -18,11 +18,23 @@ public class Blackjack extends Game {
 
 	_player.add(_deck.draw());
 	_player.add(_deck.draw());
-	System.out.println("Your hand is: " + _player + "\n");
 
 	_dealer.add(_deck.draw());
-	_dealer.add(_deck.draw());	
-	System.out.println("The dealer has a: " + _dealer.get(0) + "\n");	
+	_dealer.add(_deck.draw());
+
+	String i;
+	
+	i = "Would you like to see the rules of the game? \n";
+	i += "\t1: Yes\n";
+	i += "\t2: No\n";
+	System.out.println(i);
+
+	int rules = cs1.Keyboard.readInt();
+
+	if (rules == 1) {
+	   System.out.println(about());
+	}
+
 	play();
 	
     }
@@ -59,27 +71,18 @@ public class Blackjack extends Game {
     }
     
     public void play() {
-	String i;
-	
-	i = "Would you like to see the rules of the game? \n";
-	i += "\t1: Yes\n";
-	i += "\t2: No\n";
-	System.out.println(i);
+	System.out.println("Your hand is: " + _player + "\n");
 
-	int rules = cs1.Keyboard.readInt();
-
-	if (rules == 1) {
-	   System.out.println(about());
-	}
+	System.out.println("The dealer has a: " + _dealer.get(0) + "\n");
 	
 	if (value(_player) == 21){
 	    System.out.println("You had a blackjack! \n");
 	    mult = 2.5;
 	    win = true;	    
-	    win();
 	}
 	if (value(_dealer) == 21){
 	    System.out.println("You lost. The dealer had a blackjack! \n");
+	    win = false;
 	}
 	String s;
 	s = "Make your decision\n";
@@ -138,13 +141,13 @@ public class Blackjack extends Game {
 	    }
 	    win();
 	}
-	if (value(_dealer) > 21) {
+	else if (value(_dealer) > 21) {
 	    System.out.println("Dealer had : " + _dealer + "\n");
 	    System.out.println("Dealer busted. Congrats!");
 	    win = true;
 	}
 	
-	if (value(_player) > value(_dealer)) {
+	else if (value(_player) > value(_dealer)) {
 	    System.out.println("Dealer had : " + _dealer + "\n");
 	    System.out.println("Congrats! You beat the dealer!");
 	    win = true;
