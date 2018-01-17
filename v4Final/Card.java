@@ -2,7 +2,7 @@ public class Card {
 
     private int rank, suit;
 
-    private static String[] suits = {"Heart", "Spades", "Diamonds", "Clubs"};
+    private static String[] suits = {"Hearts", "Spades", "Diamonds", "Clubs"};
     private static String[] ranks = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King" };
 
     public Card(int suit, int rank) {
