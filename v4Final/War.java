@@ -7,10 +7,12 @@ public class War extends Game {
     private ArrayList<Card> _dealer = new ArrayList<Card>();
     private ArrayList<Card> _player = new ArrayList<Card>();
     private Deck _deck;
+    private boolean win;
+    private double winnings;
     
 public War() {
     cost = 10.0;
-    mult = 2.0;
+    mult = 3.0;
     _deck = new Deck();
 
     String s;
@@ -40,11 +42,14 @@ public String about() {
     return s;
 }
 
+public boolean getWin() {
+    return win;
+}
 public boolean win() {
     Card player = _player.remove(0);
     Card dealer = _dealer.remove(0);
 
-    boolean win = false;
+    win = false;
     if (player.getRank() == dealer.getRank()) {
 	String s;
 	s = "Would you like to risk war?\n";
@@ -68,6 +73,7 @@ public boolean win() {
     else if (player.getRank() < dealer.getRank()) {
 	win = false;
     }
+
     return win;
 
 }

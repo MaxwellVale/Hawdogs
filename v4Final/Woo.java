@@ -98,6 +98,7 @@ public class Woo {
 	s = "\nPlease choose a game to play\n";
 	s += "\t1: Keno\n";
 	s += "\t2: Blackjack\n";
+	s += "\t3: War\n";
 	System.out.println(s);
 
 	_game = cs1.Keyboard.readInt();
@@ -107,6 +108,9 @@ public class Woo {
 	}
 	else if (_game == 2) {
 	    playBlackjack();
+	}
+	else if (_game ==3) {
+	    playWar();
 	}
   else {
     String str;
@@ -150,6 +154,26 @@ public class Woo {
     public void playBlackjack() {
 	System.out.println("You are now playing Blackjack.");
 	Blackjack newGame = new Blackjack();
+
+	if (newGame.getCost() > _p1.getBalance()) {
+	    System.out.println("Sorry, you don't have enough money to play this game....");
+	    gameSelect();
+	}
+	else if (newGame.getWin()) {
+	    double earning = (newGame.getWinnings());
+	    System.out.println("You have won " + (earning));
+	    _p1.deposit(earning);
+	}
+
+	_p1.deposit(newGame.getCost() * -1);
+	System.out.println("Current Balance is now " + _p1.getBalance());
+
+
+    }
+
+    public void playWar() {
+	System.out.println("You are now playing War.");
+	War newGame = new War();
 
 	if (newGame.getCost() > _p1.getBalance()) {
 	    System.out.println("Sorry, you don't have enough money to play this game....");
