@@ -10,10 +10,10 @@ public class Blackjack extends Game {
     private Deck _deck;
     private int choice;
     private boolean win;
-    private double mult = 1.5;
 
     public Blackjack() {
 	cost = 10.0;
+	winnings = 20;
 	_deck = new Deck();
 
 	_player.add(_deck.draw());
@@ -39,7 +39,8 @@ public class Blackjack extends Game {
 
     }
 
-
+    public boolean getWin(){
+	return win;}
 
     public String about() {
 	String s;
@@ -80,92 +81,111 @@ public class Blackjack extends Game {
 
 	if (value(_player) == 21 && (_player.size() == 2)){
 
-	if (value(_player) == 21){
-	    System.out.println("You had a blackjack! \n");
-	    mult *= 1.5;
-	    win = true;
+	    if (value(_player) == 21){
+		System.out.println("You had a blackjack! \n");
+		winnings *= 1.5;
+		win = true;
+		return;
+	    }
+
+	    if (value(_dealer) == 21){
+		System.out.println("You lost. The dealer had a blackjack! \n");
+		win = false;
+		return;
+	    }
 	}
 
-	if (value(_dealer) == 21){
-	    System.out.println("You lost. The dealer had a blackjack! \n");
-	    win = false;
+
+	if (chooseaction() == true){
+	    win = win();
 	}
+    }
+
+    public boolean chooseaction(){
+
 	String s;
 	s = "Make your decision\n";
 	s += "\t1: Stand\n";
 	s += "\t2: Hit\n";
 	s += "\t3: Double\n";
 	System.out.println(s);
-
-
+	
 	choice = cs1.Keyboard.readInt();
 
 	if (choice == 1) {
-	    reveal();
+	    return reveal(choice);
 	}
 	else if (choice == 2) {
 	    _player.add(_deck.draw());
-	    reveal();
+	    return reveal(choice);
 	}
 	else if (choice == 3) {
-	    mult *= 2;
+	    winnings *= 2;
 	    _player.add(_deck.draw());
-	    reveal();
+	    return reveal(choice);
 	}
 	else {
 	    System.out.println("You've chosen an invalid choice. Please select again");
-	    play();
+	    return  chooseaction();
 	}
     }
-	}
-    public void reveal() {
+    
+    public boolean reveal(int choice) {
 	if (choice == 3) {
 	    if (value(_player) > 21) {
 	    System.out.println("Sorry, you busted. (Over the winning amount)");
+	    System.out.println("Your hand was: " + _player + "\n");	    
 		win = false;
+		return false;
 	    }
 	}
 
 	else if (choice == 2) {
 	    if (value(_player) > 21) {
-	    System.out.println("Sorry, you busted. (Over the winning amount)");
-	    win = false;
+		System.out.println("Sorry, you busted. (Over the winning amount)");
+		System.out.println("Your hand was: " + _player + "\n");
+		win = false;
+		return false;
 	    }
 	    else {
-		play();
+		System.out.println("Your hand is: " + _player + "\n");
+		if (value(_player) > 21){return false;}
+		return chooseaction();
 	    }
 	}
 	else if (choice == 1) {
-	    win();
 	}
+	return true;
     }
 
     public boolean win() {
-	if (value(_dealer) == value(_player)) {
-	    win = true;
-	}
-	if (value(_dealer) > 21) {
-	    System.out.println("Dealer had : " + _dealer + "\n");
-	    System.out.println("Dealer busted. Congrats!");
-	    win = true;
-	}
-	else if (value(_dealer) < 17) {
+	
+	if (value(_dealer) < 17) {
 	    while (value(_dealer) <17) {
 		_dealer.add(_deck.draw());
 	    }
 	}
 
-	else if (value(_player) > value(_dealer)) {
+	if (value(_dealer) > 21) {
+	    System.out.println("Dealer had : " + _dealer + "\n");
+	    System.out.println("Your hand was: " + _player + "\n");
+	    System.out.println("Dealer busted. Congrats!");
+	    return true;
+	}
+	
+	if (value(_player) > value(_dealer)) {
 
 	    System.out.println("Dealer had : " + _dealer + "\n");
+	    System.out.println("Your hand was: " + _player + "\n");
 	    System.out.println("Congrats! You beat the dealer!");
 	    win = true;
 	}
 	else {
 	    System.out.println("Dealer had : " + _dealer + "\n");
+	    System.out.println("Your hand was: " + _player + "\n");
 	    System.out.println("Dealer has beaten you. Sorry");
 	    win = false;
 	}
-	return win;
+	return false;
     }
 }

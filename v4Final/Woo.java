@@ -136,14 +136,15 @@ public class Woo {
 	    System.out.println("Sorry, you don't have enough money to play this game....");
 	    gameSelect();
 	}
-	else {
-
-	    double earning = (newGame.getMult() * 10);
+	else if (newGame.getWin() == true) {
+	    double earning = (newGame.getWinnings());
 	    System.out.println("You have won " + (earning));
 	    _p1.deposit(earning);
-	    _p1.deposit(newGame.getCost() * -1);
-	    System.out.println("Current Balance is now " + _p1.getBalance());
 	}
+	
+	_p1.deposit(-10);
+	System.out.println("Current Balance is now " + _p1.getBalance());
+	
 	
     }
 
