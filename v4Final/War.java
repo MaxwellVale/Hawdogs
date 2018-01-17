@@ -8,6 +8,7 @@ public class War extends Game {
   private ArrayList<Card> _player = new ArrayList<Card>();
   private Deck _deck;
   private boolean win;
+  private int flip;
 
 
   public War() {
@@ -96,14 +97,35 @@ public class War extends Game {
 
     _dealer.add(_deck.draw());
 
-    System.out.println("You drew a " + _player);
-    System.out.println("Dealer has drawn a " + _dealer);
+    System.out.println("\nDealer has drawn a " + _dealer);
 
-    if (win()) {
-      System.out.println("Congrats! you have bested your opponent in combat");
+    String s;
+    s = "Are you ready to reveal your card?\n";
+    s += "\t1: Yes\n";
+    s += "\t2: No\n";
+    System.out.println(s);
+
+    flip = cs1.Keyboard.readInt();
+
+    if (flip == 1) {
+      System.out.println("\nAlright, here we go.");
+    }
+    else if (flip == 2) {
+      System.out.println("\nSorry, but I don't have all day. Let's just reveal now.");
     }
     else {
-      System.out.println("Your opponent had the greater manpower. Sorry");
+      System.out.println("\nYou're clearly confused. Revealing now is the best choice.");
+    }
+
+
+    System.out.println("\nYou drew a " + _player);
+
+
+    if (win()) {
+      System.out.println("\nCongrats! you have bested your opponent in combat");
+    }
+    else {
+      System.out.println("\nYour opponent had the greater manpower. Sorry");
     }
   }
 }
