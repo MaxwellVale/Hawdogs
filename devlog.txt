@@ -41,12 +41,27 @@ would display a dealer's hand as well as a player's hand, as well as a a brief d
 game requiring a display of random numbers, like Roulette and Keno, we would display a 2d array of numbers, which the user 
 will be able to interact with.
 
+Interfaces/Classes: One of the most important files we need for our Casino games were the creation of Deck and Card. 
+We first believed that we had to make these interfaces, although we then realized that we ought to make these classes so
+that we can access the methods in the classes. One of the challenges was using the Deck to create a hand of cards, and
+then comparing the cards in said hand. We devised methods to compare the faces and ranks of each card for games that
+required such a thing.
+
+Currency: We needed to find a way to award and punish our consumers for playing the games, and to resolve this we created
+a game cost, a multipler, and a winnings variable. We can then use these variables to keep track of the player's money, 
+and subtract or add it from their balance. For each game, there is a way to gain money based on the way you can win, and
+a limit/minimum you can win/lose.
+
+Comparing Type Cards: One huge challenge was comparing objects of type Card. We need to keep track of their value and
+view the value of each hand, which we then compare for the game. The methods in class Card were created so that we 
+will access their face and suit.
+
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Keeping or Leaving: What if the game becomes unnecessarily complicated?
 There is always a chance that a game becomes really complex and gives us a lot of issues, to the point where we must 
 entertain scraping the idea. We believe that because having a variety of games, we can easily rid of any intricate 
-headaches. Athough this is not really a problem, we may run into this in the future.
+headaches. Although this is not really a problem, we may run into this in the future.
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -57,12 +72,14 @@ each game.
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 We changed ___ to ___ bc...
-<etc>
-<etc>
+We changed the older currency system from simply subtracting the cost from the earning to actually storing the winnings.
+This allows us to efficiently stored and transfer the player's winnings to their balance.
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-<tales of wisdom gained...>
+Planning is super important for a project. Prior to any coding, we talked over how we would set up our code for the games, 
+we talked int great length over our plan. This is crucial for any big project as it helps us understand how to structure 
+our work. Without  the  use of flowcharts and UML diagrams, we would have been struggling a lot more.
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
@@ -134,3 +151,10 @@ Jude :: Added the Game superclass(abstract).
 Jackie :: Built the Card and Deck classes which is needed for the card games.
 Jude :: Built and created a working version of Blackjack.
 ==============================================================
+
+2018-1-16
+-------------------------------------------------------------
+Jackie :: Created War and update Woo.java, updated devlog
+Jude :: Created/updated UML diagrams and flowcharts
+Maxwell :: Created flowchart for War and fixed currency issue
+=============================================================
