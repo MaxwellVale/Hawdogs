@@ -4,8 +4,7 @@
 import java.util.ArrayList;
 import cs1.Keyboard;
 
-public class Keno extends Game{
-
+public class Keno extends Game implements RNG{
     // ***** Instance Vars *****
     private ArrayList<Integer> nums; // list that holds numbers to guess from
     private ArrayList<Integer> winNums; // list that holds the winning numbers
@@ -70,9 +69,6 @@ public class Keno extends Game{
     }
 
 
-    public double getMult() {
-	return mult;
-    }
 
     public boolean win() {
 
@@ -117,7 +113,7 @@ public class Keno extends Game{
 	    System.out.println("Congratulations, you have guessed at least one winning number!");
 	}
 	else {
-	    System.out.println("Sorry, those was not the winning numbers...");
+	    System.out.println("Sorry, those were not the winning numbers...");
 	}
 
 	System.out.println("Winning Numbers: " + winNums);
