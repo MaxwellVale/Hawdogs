@@ -30,7 +30,7 @@ public class Woo {
 	int playerAge;
 
 	s = "\n *** Welcome to The HawDog Casino! ***\n";
-	s += "First, may we have your ID?\n";
+	s += "\nFirst, may we have your ID?\n";
 	s += "(Handing over ID...)\n";
 	s += "So tell me, what is your name, fellow CSer? ";
 
@@ -80,9 +80,16 @@ public class Woo {
 	if (_area == 1) {
 	    gameSelect();
 	}
-	else {
+	else if (_area == 2) {
 	    leave();
 	}
+  else {
+    System.out.println("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+    System.out.println("Unfortunately, you are prohibited from entering the VIP Lounge.");
+    System.out.println("Please choose a valid area.");
+    System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+    areaSelect();
+  }
     }
 
     public void gameSelect() {
@@ -101,6 +108,18 @@ public class Woo {
 	else if (_game == 2) {
 	    playBlackjack();
 	}
+  else {
+    String str;
+    str = "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
+    str += "\nBathroom you say?\n";
+    str += "Right this way please.\n";
+    str += "Go ahead, I'll be waiting right outside.\n";
+    str += "\n *Using Bathroom...*\n";
+    str += "\n Alright great! Now back to the Game Area.";
+    str += "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~";
+    System.out.println(str);
+    gameSelect();
+  }
 	areaSelect();
 
     }
@@ -110,7 +129,7 @@ public class Woo {
     }
 
     public void playKeno() {
-      
+
 	System.out.println("You are now playing Keno.");
 	Keno newGame = new Keno();
 
@@ -136,16 +155,16 @@ public class Woo {
 	    System.out.println("Sorry, you don't have enough money to play this game....");
 	    gameSelect();
 	}
-	else if (newGame.getWin() == true) {
+	else if (newGame.getWin()) {
 	    double earning = (newGame.getWinnings());
 	    System.out.println("You have won " + (earning));
 	    _p1.deposit(earning);
 	}
-	
-	_p1.deposit(-10);
+
+	_p1.deposit(newGame.getCost() * -1);
 	System.out.println("Current Balance is now " + _p1.getBalance());
-	
-	
+
+
     }
 
     //********************
