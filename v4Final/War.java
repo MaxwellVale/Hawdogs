@@ -33,12 +33,12 @@ public War() {
 public String about() {
     String s;
     s = "\nWar is a very simplistic game, and can be one of the fastest way you can win money\n";
-    s += "\nAt the start of every game, you and the dealer are dealt a random card, and you both will reveal their values.";
-    s += "\nIf the value of your card is greater than the dealer, then you win! Simple as that.";
-    s += "\nIf the dealer beats you, then you will lose, and have to play another round of War.";
-    s += "\nIn the event that the value of your card is equal to the dealer's, you are given two options:";
-    s += "\nYou can either forfeit and receive half your bet, or got to War.";
-    s += "\nYou will keep drawing cards, comparing them, all the way until one of you has the higher card. Welcome to War.";
+    s += "\nAt the start of every game, you and the dealer are dealt a random card, \nand you both will reveal their values.";
+    s += "\nIf the value of your card is greater than the dealer, then you win! \nSimple as that.";
+    s += "\nIf the dealer beats you, then you will lose, \nand have to play another round of War.";
+    s += "\nIn the event that the value of your card is equal to the dealer's, \nyou are given two options:";
+    s += "\nYou can either forfeit and receive half your bet, or go to War.";
+    s += "\nYou will keep drawing cards, comparing them, all the way until \none of you has the higher card. Welcome to War.";
     return s;
 }
 
