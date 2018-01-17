@@ -159,24 +159,23 @@ public class Blackjack extends Game {
     }
   }
 
-// once Player chooses to stand or Player gets a Blackjack
+// once Player chooses to stand, compare the hands of _dealer and _player
   public boolean win() {
 
-    if (value(_dealer) > 21) {
+    if (value(_dealer) > 21) { // if dealer busts, you win
       System.out.println("Dealer had : " + _dealer + "\n");
       System.out.println("Your hand was: " + _player + "\n");
       System.out.println("Dealer busted. Congrats!");
       return true;
     }
 
-    else if (value(_player) > value(_dealer)) {
-
+    else if (value(_player) > value(_dealer)) { // if value of hand is higher than _dealer, you win
       System.out.println("Dealer had : " + _dealer + "\n");
       System.out.println("Your hand was: " + _player + "\n");
       System.out.println("Congrats! You beat the dealer!");
       return true;
     }
-    else {
+    else { // otherwise, _dealer wins
       System.out.println("Dealer had : " + _dealer + "\n");
       System.out.println("Your hand was: " + _player + "\n");
       System.out.println("Dealer has beaten you. Sorry");
@@ -192,17 +191,17 @@ public class Blackjack extends Game {
     System.out.println("The dealer has a: " + _dealer.get(0) + "\n"); // only shows the face up card of dealer to player
 
 
-    if (value(_player) == 21){
+    if (value(_player) == 21){ // checks for initial Blackjack of _player
       System.out.println("You had a blackjack! \n");
       winnings *= 1.5;
       win = true;
     }
 
-    else if (value(_dealer) == 21) {
+    else if (value(_dealer) == 21) { // check for initial Blackjack of _dealer
       System.out.println("You lost. The dealer had a blackjack! \n");
       win = false;
     }
-    else if (chooseaction() == true) {
+    else if (chooseaction() == true) { // otherwise, start playing the game normally
       win = win();
     }
 
