@@ -4,13 +4,13 @@ import cs1.Keyboard;
 
 public class War extends Game {
 
-    private ArrayList<Card> _dealer = new ArrayList<Card>();
-    private ArrayList<Card> _player = new ArrayList<Card>();
-    private Deck _deck;
-    private boolean win;
+  private ArrayList<Card> _dealer = new ArrayList<Card>();
+  private ArrayList<Card> _player = new ArrayList<Card>();
+  private Deck _deck;
+  private boolean win;
 
 
-public War() {
+  public War() {
     cost = 10.0;
     mult = 2.0;
     _deck = new Deck();
@@ -24,13 +24,13 @@ public War() {
     int rules = cs1.Keyboard.readInt();
 
     if (rules == 1) {
-	System.out.println(about());
+      System.out.println(about());
     }
 
     play();
-}
+  }
 
-public String about() {
+  public String about() {
     String s;
     s = "\nWar is a very simplistic game, and can be one of the fastest way you can win money\n";
     s += "\nAt the start of every game, you and the dealer are dealt a random card, and you both will reveal their values.";
@@ -40,45 +40,57 @@ public String about() {
     s += "\nYou can either forfeit and receive half your bet, or go to War.";
     s += "\nYou will keep drawing cards, comparing them, all the way until one of you has the higher card. Welcome to War.";
     return s;
-}
+  }
 
-public boolean getWin() {
+  public boolean getWin() {
     return win;
-}
-public boolean win() {
+  }
+
+  public boolean win() {
     Card player = _player.remove(0);
     Card dealer = _dealer.remove(0);
 
     win = false;
-    if (player.getRank() == dealer.getRank()) {
-	String s;
-	s = "Would you like to risk war?\n";
-	s += "\t1: Forfeit\n";
-	s += "\t2: Go to War";
-	System.out.println(s);
-	int choice = cs1.Keyboard.readInt();
+    if (value(player) == value(dealer)) {
+      String s;
+      s = "Would you like to risk war?\n";
+      s += "\t1: Forfeit\n";
+      s += "\t2: Go to War";
+      System.out.println(s);
+      int choice = cs1.Keyboard.readInt();
 
-	if (choice == 1) {
-	    mult= 0.5;
-	    win = true;
-	}
-	else {
-	    play();
-	}
+      if (choice == 1) {
+        mult= 0.5;
+        win = true;
+      }
+      else {
+        play();
+      }
     }
-    else if (player.getRank() > dealer.getRank()) {
-	win = true;
+    else if (value(player) > value(dealer)) {
+      win = true;
     }
 
-    else if (player.getRank() < dealer.getRank()) {
-	win = false;
+    else if (value(player) < value(dealer)) {
+      win = false;
     }
     winnings = mult * cost;
     return win;
 
-}
+  }
 
-public void play() {
+  public int value (Card card) {
+    int actual;
+    if (card.getRank() == 1) {
+      actual = 14;
+    }
+    else {
+      actual = card.getRank();
+    }
+    return actual;
+  }
+
+  public void play() {
 
     _player.add(_deck.draw());
 
@@ -88,10 +100,10 @@ public void play() {
     System.out.println("Dealer has drawn a " + _dealer);
 
     if (win()) {
-	System.out.println("Congrats! you have bested your opponent in combat");
+      System.out.println("Congrats! you have bested your opponent in combat");
     }
     else {
-	System.out.println("Your opponent had the greater manpower. Sorry");
+      System.out.println("Your opponent had the greater manpower. Sorry");
     }
-}
+  }
 }
