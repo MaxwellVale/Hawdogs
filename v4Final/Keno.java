@@ -96,6 +96,13 @@ public class Keno extends Game implements RNG{
     if (rules == 1) {
       System.out.println(about());
     }
+    else if (rules == 2) {
+      System.out.println("\nAlright we get it, you're a pro...\n");
+    }
+    else {
+      System.out.println("\nSomething tells me you're confused, so here are the rules anyway...\n");
+      System.out.println(about());
+    }
 
     s = "Ok, now please make 15 unique guesses from 1 - 80 inclusive: ";
     System.out.println(s);
