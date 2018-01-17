@@ -8,11 +8,11 @@ public class War extends Game {
     private ArrayList<Card> _player = new ArrayList<Card>();
     private Deck _deck;
     private boolean win;
-    private double winnings;
+
     
 public War() {
     cost = 10.0;
-    mult = 3.0;
+    mult = 2.0;
     _deck = new Deck();
 
     String s;
@@ -59,7 +59,7 @@ public boolean win() {
 	int choice = cs1.Keyboard.readInt();
 
 	if (choice == 1) {
-	    mult = 0.5;
+	    mult= 0.5;
 	    win = true;
 	}
 	else {
@@ -73,7 +73,7 @@ public boolean win() {
     else if (player.getRank() < dealer.getRank()) {
 	win = false;
     }
-
+    winnings = mult * cost;
     return win;
 
 }
