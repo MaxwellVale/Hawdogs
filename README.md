@@ -21,9 +21,7 @@ able to start up the casino.
 - Please launch the file CasinoDriver.java -- You can do this by typing in the terminal javac CasinoDriver.java
 - You then compile the file by typing java CasinoDriver.java and enter the casino.
 
-2. Upon launching the casino, the player will be prompted to either login to a pre-existing account or create a new account.
-- If the player logs into an old account, they will be able to continue from their previous progress. Otherwise, the player can 
-simply start anew with a brand new account. 
+2. Upon launching the casino, the player will be prompted to confirm their name and age. This will give them entry into the casino.
 - The player will need to enter a name and their age. If their age is 21 and over, 
 they can begin their capitalist conquest. We here at the Hawdog Casino reward new members for living to the age of 21 by 
 giving them $100 of casino money to start with.
