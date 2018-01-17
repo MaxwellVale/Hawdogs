@@ -155,6 +155,7 @@ Jude :: Built and created a working version of Blackjack.
 2018-1-16
 -------------------------------------------------------------
 Jackie :: Created War and update Woo.java, updated devlog
-Jude :: Created/updated UML diagrams and flowcharts
-Maxwell :: Created flowchart for War and fixed currency issue
+Jude :: Created/updated UML diagrams
+Maxwell :: Created flowcharts for specific Games. Tweaked Woo.java to catch User input error.
+Everyone :: Lots of Bug Fixing and Testing.
 =============================================================
