@@ -9,7 +9,7 @@ public class War extends Game {
     private Deck _deck;
     private boolean win;
 
-    
+
 public War() {
     cost = 10.0;
     mult = 2.0;
@@ -37,7 +37,7 @@ public String about() {
     s += "\nIf the value of your card is greater than the dealer, then you win! Simple as that.";
     s += "\nIf the dealer beats you, then you will lose, and have to play another round of War.";
     s += "\nIn the event that the value of your card is equal to the dealer's, you are given two options:";
-    s += "\nYou can either forfeit and receive half your bet, or got to War.";
+    s += "\nYou can either forfeit and receive half your bet, or go to War.";
     s += "\nYou will keep drawing cards, comparing them, all the way until one of you has the higher card. Welcome to War.";
     return s;
 }
