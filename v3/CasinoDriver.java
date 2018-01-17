@@ -91,6 +91,7 @@ public class CasinoDriver {
 	s = "\nPlease choose a game to play\n";
 	s += "\t1: Keno\n";
 	s += "\t2: Blackjack\n";
+	s += "\t3: War\n";
 	System.out.println(s);
 
 	_game = cs1.Keyboard.readInt();
@@ -100,6 +101,9 @@ public class CasinoDriver {
 	}
 	else if (_game == 2) {
 	    playBlackjack();
+	}
+	else if (_game == 3) {
+	    playWar();
 	}
 	areaSelect();
 
@@ -145,6 +149,24 @@ public class CasinoDriver {
 	    System.out.println("Current Balance is now " + _p1.getBalance());
 	}
 	
+    }
+    public void playWar() {
+	System.out.println("You are now playing War");
+	War newGame = new War();
+
+	if (newGame.getCost() > _p1.getBalance()) {
+	    System.out.println("Sorry, you don't have enough money to play this game....");
+	    gameSelect();
+	}
+	else {
+
+	    double earning = (newGame.getMult() * newGame.getCost());
+	    System.out.println("You have won " + (earning - newGame.getCost()));
+	    _p1.deposit(earning);
+	    _p1.deposit(newGame.getCost() * -1);
+	    System.out.println("Current Balance is now " + _p1.getBalance());
+	}
+
     }
 
     //********************
