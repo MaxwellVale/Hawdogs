@@ -27,6 +27,13 @@ public class War extends Game {
     if (rules == 1) {
       System.out.println(about());
     }
+    else if (rules == 2) {
+      System.out.println("\nAlright we get it, you're a pro...\n");
+    }
+    else {
+      System.out.println("\nSomething tells me you're confused, so here are the rules anyway...\n");
+      System.out.println(about());
+    }
 
     play();
   }
